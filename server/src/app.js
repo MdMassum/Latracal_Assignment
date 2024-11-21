@@ -5,6 +5,9 @@ import errorMiddleware from './middleware/error.js';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import authRouter from './routes/authRoutes.js'
+import userRouter from './routes/userRoutes.js'
+import bookRouter from './routes/bookRoutes.js'
+import reviewRouter from './routes/reviewRoutes.js'
 
 
 const app = express();
@@ -36,6 +39,9 @@ app.use(cookieParser());
 // routes
 
 app.use('/api/auth',authRouter)
+app.use('/api/user',userRouter)
+app.use('/api/book',bookRouter)
+app.use('/api/review',reviewRouter)
 
 // error check 
 app.use(errorMiddleware)
