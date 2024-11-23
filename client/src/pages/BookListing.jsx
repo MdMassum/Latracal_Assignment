@@ -18,6 +18,7 @@ export default function Bookbook() {
 
   const navigate = useNavigate();
   const params = useParams();
+  const {currentUser} = useSelector((state)=>state.user)
 
   const handleReviewSubmit = async () => {
     try {
@@ -177,7 +178,10 @@ export default function Bookbook() {
 
                       <p className='flex justify-between'>
                         <div><strong>Name:</strong> {review.name || 'unknown'}</div>
+                        {
+                          review.user === currentUser._id &&
                         <MdDelete onClick={handleDeleteReview} className='cursor-pointer h-7 w-7'/>
+                        }
                       </p>
                       <p className='flex justify-between'>
                         <div><strong>Rating:</strong> {review.rating || 0}</div>
