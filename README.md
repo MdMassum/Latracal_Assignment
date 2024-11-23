@@ -11,13 +11,13 @@
 
 ## Key Technologies Used
 
-- **Backend**
+  **Backend**
 - **Node.js**: The primary backend framework for building the API.
 - **Express.js**: Used to handle HTTP requests and routing.
 - **MongoDB**: Used for storing User and Book Data.
 - **Helmet**: Adds security headers to the application for enhanced security.
 
-- **Frontend**
+  **Frontend**
 - **Reactjs**: Main framework for Frontend
 - **React Router**: Handles SPA routing seamlessly.
 - **Tailwind CSS**: Utility-first CSS framework for styling.
@@ -35,22 +35,22 @@ The API supports CRUD operations for **Books**, **comments**, and **user authent
 
 ## APIs
 
--**Auth Routes**
+- **Auth Routes**
 1. POST /api/auth/signIn : Login User.
 2. POST /api/auth/signUp : SignUp user.
 3. POST /api/auth/logout : Logout user.
 
--**User Routes**
+- **User Routes**
 1. GET /api/user/allUsers : Get all Users.
 1. GET /api/user/get/:id : Get User By Id.
 1. PUT /api/user/update/:id : Update User by Id.
 
--**Book Routes**
+- **Book Routes**
 1. POST /api/book/create : Create Book Only By Admin.
 1. GET /api/book/allBooks : Get all books.
 1. GET /api/book/getbook/:id : GetBook by Id.
 
--**Book Routes**
+- **Review Routes**
 1. GET /api/review/get/:id : Get All reviews of A book by bookId.
 1. POST /api/review/add : Create a review (One user can create only one review).
 1. DELETE /api/review/getbook/:id : Delete review (user can delete only there review).
@@ -74,7 +74,7 @@ link : `https://latracal-assignment.vercel.app/`
 
 ## Frontend
 
-- **Pages**
+**Pages**
 - '/' -> login page
 - '/signUp' -> SignUp page
 - '/home' -> home page
@@ -83,4 +83,4 @@ link : `https://latracal-assignment.vercel.app/`
 - '/book/:id'  -> Book Listing Page
 
 - '/create-book' -> Create Book Page (Only Admin Can Access)
-- **All Pages Are Authenticated Except Login & SignUp Page**
+  **All Pages Are Authenticated Except Login & SignUp Page**
