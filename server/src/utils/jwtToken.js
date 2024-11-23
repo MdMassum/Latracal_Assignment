@@ -18,11 +18,7 @@ const sendToken = (user, statusCode, res) => {
     res.status(statusCode).cookie("access_token", token, options).json({
         success: true,
         access_token : token,
-        user:{
-            id:user._id,
-            email:user.email,
-            role:user.role
-        }
+        user
     });
 };
 export default sendToken;

@@ -3,7 +3,7 @@ import cookieParser from 'cookie-parser';
 import cors from 'cors'
 import errorMiddleware from './middleware/error.js';
 import helmet from 'helmet';
-import rateLimit from 'express-rate-limit';
+// import rateLimit from 'express-rate-limit';
 import authRouter from './routes/authRoutes.js'
 import userRouter from './routes/userRoutes.js'
 import bookRouter from './routes/bookRoutes.js'
@@ -12,17 +12,18 @@ import reviewRouter from './routes/reviewRoutes.js'
 
 const app = express();
 
-app.use(rateLimit({
-   windowMs: 5 * 60 * 1000, // 5 minutes
-   max: 100,
-   message: "Too many attempts from this IP, please try again later.",
-   })); // Rate limiting
+// app.use(rateLimit({
+//    windowMs: 5 * 60 * 1000, // 5 minutes
+//    max: 100,
+//    message: "Too many attempts from this IP, please try again later.",
+//    })); // Rate limiting
 
 app.use(helmet());
-app.use(rateLimit({}))
+// app.use(rateLimit({}))
 
 app.use(cors({
     origin:'http://localhost:5173',     // frontend url
+    // origin:'*',     // frontend url
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
         "Content-Type",

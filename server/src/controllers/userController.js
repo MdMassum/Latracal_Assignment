@@ -1,6 +1,7 @@
 
 import User from "../models/User.js";
 import ErrorHandler from "../utils/errorHandler.js";
+import bcrypt from 'bcryptjs'
 
 
 // getAllUsers
@@ -40,7 +41,7 @@ export const getUserById = async(req,res,next) =>{
 // get user by id
 export const updateUser = async(req,res,next) =>{
 
-    if(req.user.id !== req.params.id) return next(errorHandler(401, "You can only update your own account"))
+    if(req.user.id !== req.params.id) return next(new ErrorHandler(401, "You can only update your own account"))
 
     try {
 
