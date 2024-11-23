@@ -23,7 +23,7 @@ app.use(helmet());
 
 app.use(cors({
     // origin:'http://localhost:5173',     // frontend url
-    origin:'*',     // frontend url
+    origin:'https://latracal-assignment.vercel.app',     // frontend url
     methods: ["GET", "POST", "DELETE", "PUT"],
     allowedHeaders: [
         "Content-Type",
