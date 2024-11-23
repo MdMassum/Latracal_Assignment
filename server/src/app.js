@@ -38,7 +38,12 @@ app.use(express.json());
 app.use(cookieParser());
 
 // routes
-
+app.use('/',(req,res)=>{
+  res.status(200).json({
+    success:true,
+    message:"Server Running Successfully"
+  })
+})
 app.use('/api/auth',authRouter)
 app.use('/api/user',userRouter)
 app.use('/api/book',bookRouter)
