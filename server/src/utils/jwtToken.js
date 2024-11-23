@@ -12,7 +12,8 @@ const sendToken = (user, statusCode, res) => {
             Date.now() + parseInt(process.env.COOKIE_EXPIRE) * 24 * 60 * 60 * 1000
         ),
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production"
+        secure: process.env.NODE_ENV === "production",
+        sameSite: process.env.NODE_ENV === "production" ? 'None' : 'Lax'
     };
 
     res.status(statusCode).cookie("access_token", token, options).json({
